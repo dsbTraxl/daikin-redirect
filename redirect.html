@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Daikin OAuth Redirect</title>
+</head>
+<body>
+    <h1>Daikin OAuth Redirect</h1>
+    <p>Authorization Code:</p>
+    <pre id="code"></pre>
+
+    <script>
+        function getParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name);
+        }
+
+        const code = getParam('code');
+        document.getElementById('code').textContent =
+            code || 'Kein "code"-Parameter in der URL gefunden.';
+
+        console.log('Full URL:', window.location.href);
+    </script>
+</body>
+</html
